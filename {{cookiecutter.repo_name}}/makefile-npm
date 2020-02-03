@@ -15,6 +15,7 @@ PACKAGE := .package/$(shell node -p 'const p=require("./package.json"); `$${p.na
 .PHONY: \
 	build \
 	package \
+  utest \
 	clean
 
 build: $(build_files)
@@ -27,6 +28,9 @@ package: $(PACKAGE)
 clean:
 	npm run build:clean
 	rm -f $(PACKAGE)
+
+utest:
+	npm run test
 
 node_modules: package.json
 	npm i && touch node_modules
