@@ -1,0 +1,6 @@
+{
+  "repo_name": "reponame",
+  "repo_description": "repo description",
+  "repo_author": "Joe Blow",
+  "_copy_without_render": [".src/*", "./test/*"]
+}
