@@ -15,10 +15,10 @@ pip install cookiecutter
 Create a new repo from this template
 
 ```bash
-cookiecutter git@github.com:xyz/cookiecutter-typescript
+cookiecutter https://github.com/liammurray/cookiecutter-typescript.git
 ```
 
-Local
+Local (e.g. clone to test and make updates)
 
 ```bash
 cookiecutter /path/to/cookiecutter-typecript
