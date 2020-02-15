@@ -29,7 +29,8 @@ cookiecutter /path/to/cookiecutter-typecript
 One way to update the cookie cutter template is make change to a local project created from the template. See things that are excluded in `.rsync-exclude`.
 
 ```bash
-rsync -r --exclude-from=.rsync-exclude <PATH/TO/PROJECT> \{\{cookiecutter.repo_name\}\}/ -v
+# Add -v for verbose mode
+rsync -r --exclude-from=.rsync-exclude <PATH/TO/PROJECT> \{\{cookiecutter.repo_name\}\}/
 ```
 
 Afterwards make a few manual updates as needed (these are excluded to avoid clobbering template params).
