@@ -16,6 +16,10 @@ Create a new repo from this template
 
 ```bash
 cookiecutter https://github.com/liammurray/cookiecutter-typescript.git
+cd <project>
+make utest
+make dist
+./run
 ```
 
 Local (e.g. clone to test and make updates)

@@ -2,7 +2,7 @@
   "name": "{{ cookiecutter.repo_name }}",
   "version": "0.1.0",
   "description": "{{ cookiecutter.repo_description }}",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "private": true,
   "scripts": {
     "audit-checker": "check-audit",
