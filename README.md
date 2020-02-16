@@ -28,16 +28,22 @@ Local (e.g. clone to test and make updates)
 cookiecutter /path/to/cookiecutter-typecript
 ```
 
-## Sync local changes
+## Making changes
 
-One way to update the cookie cutter template is make change to a local project created from the template. See things that are excluded in `.rsync-exclude`.
+To make changes and update this cookiecutter project.
 
-```bash
-# Add -v for verbose mode
-rsync -r --exclude-from=.rsync-exclude <PATH/TO/PROJECT> \{\{cookiecutter.repo_name\}\}/
-```
+1. Create a project from the cookiecutter and make changes.
 
-Afterwards make a few manual updates as needed (these are excluded to avoid clobbering template params).
+1. In this directory run the following to run the rsync command. It will first run rsync in dry-run mode and then prompt to run the rsync command.
 
-- README.md
-- package.json
+   ```bash
+   ./changes ../path/to/project
+   ```
+
+1. See additional changes you need to make by hand.
+
+   ```bash
+   ./changes ../path/to/project
+   ```
+
+   This shows changes for files included in `.rsync-exclude`, which includes files that cookiecutter modifies with template parameters (and which rsync would always try to copy otherwise).

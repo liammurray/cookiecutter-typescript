@@ -1,6 +1,0 @@
-plugins: ['mocha']
-extends: ['plugin:mocha/recommended']
-env:
-  mocha: false
-
-
