@@ -15,13 +15,12 @@ PACKAGE := .package/$(shell node -p 'const p=require("./package.json"); `$${p.na
 .PHONY: \
 	build \
 	package \
+  clean \
   utest \
-	clean
+  lambda \
+  develop \
 
 build: dist
-
-lambda: build
-	npm run lambda
 
 package: $(PACKAGE)
 
@@ -32,10 +31,16 @@ clean:
 utest: node_modules
 	npm run test
 
+develop: node_modules
+	npm run start:watch | pino-pretty
+
 node_modules: package.json
 	npm i && touch node_modules
 
-dist: $(source_files) node_modules
+lambda: build
+	npm run lambda
+
+dist: $(source_files) node_modules tsconfig.json
 	npm run build
 
 $(PACKAGE): $(build_files)

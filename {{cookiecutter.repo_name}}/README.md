@@ -17,4 +17,24 @@ Using npm
 npm install
 npm run build
 npm run test
+npm run test:cov
 ```
+
+## Develop (watch)
+
+Run in watch mode under nodemon (ts-node):
+
+```bash
+npm install -g pino-pretty
+make develop
+```
+
+## Lambda
+
+Package to `./lambda` with production dependencies only:
+
+```bash
+make lambda
+```
+
+TODO: Need to remove .ts files

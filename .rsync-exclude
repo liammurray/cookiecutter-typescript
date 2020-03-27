@@ -1,6 +1,7 @@
 node_modules
+.nyc*
 .eslintcache
 package-lock.json
-package.json
 README.md
 dist
+lambda

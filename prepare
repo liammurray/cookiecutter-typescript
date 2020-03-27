@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [[ ! -d $1 ]]; then
+  echo "usage: prepare <project-dir>" && exit 1
+fi
+PROJECT="$1"
+
+fixup() {
+  echo "Updating: $1 => $2"
+  jq ".$1 = \"{{ cookiecutter.$2 }}\"" package.json | sponge package.json
+}
+
+prepare() {
+  (
+    cd $PROJECT &&
+      fixup author repo_author &&
+      fixup description repo_description &&
+      fixup name repo_name
+  )
+}
+
+echo "This will modify package.json in $1"
+read -p "Run prepare command (y/n)? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  prepare
+fi

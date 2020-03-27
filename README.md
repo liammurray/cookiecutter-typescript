@@ -34,10 +34,24 @@ To make changes and update this cookiecutter project.
 
 1. Create a project from the cookiecutter and make changes.
 
-1. In this directory run the following to run the rsync command. It will first run rsync in dry-run mode and then prompt to run the rsync command.
+1. Run the following (in this dir) to add back cookiecutter replacements.
+
+   Note that this makes package.json unusable (invalid characters in name, etc.)
 
    ```bash
-   ./changes ../path/to/project
+   ./prepare ../path/to/project
+   ```
+
+1. Copy changes.
+
+   It will first run rsync in dry-run mode and then prompt to run the rsync command.
+   You might need to add more excludes to `./rsync-exclude` if you see things that will
+   be copied that you don't want to copy.
+
+   This excludes files (README.md) that have cookiecutter replacements (can add these to prepare script eventually). Those you have to do by hand (next step).
+
+   ```bash
+   ./sync ../path/to/project
    ```
 
 1. See additional changes you need to make by hand.

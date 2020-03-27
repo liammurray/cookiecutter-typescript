@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": ["./node_modules/@types"],
+
     // Base directory to resolve non-absolute module names
     "baseUrl": "src",
     // "incremental": true
@@ -7,21 +19,24 @@
     "declaration": true,
     // Implies allowSyntheticDefaultImports: true
     "esModuleInterop": true,
-    "lib": ["es6", "esnext.asynciterable"],
+    "lib": ["es2018"],
     "module": "commonjs",
-    "types": ["node", "mocha"],
     // Raise error on expressions and declarations with an implied 'any' type.
     "noImplicitAny": false,
     // Redirect output structure to the directory
     "outDir": "dist",
     // Lookup locations relative to the 'baseUrl'
     // Makes vscode happy but you still need a module resolver (babel) for complilation.
-    // "paths": {
-    //   "~/*": ["*"]
-    // },
-    "sourceMap": true,
+    "paths": {
+      "~/*": ["*"]
+    },
+    // ttypescript
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
     "strict": true,
-    "target": "esnext"
+    "target": "es2018"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "test/**/*"]
 }
