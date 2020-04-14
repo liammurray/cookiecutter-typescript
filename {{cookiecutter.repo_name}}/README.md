@@ -2,12 +2,19 @@
 
 {{cookiecutter.repo_description}} by {{cookiecutter.repo_author}}
 
+## Quickstart
+
+```bash
+make utest
+```
+
 ## Build
 
 Using makefile
 
 ```bash
 make build
+make lint
 make utest
 ```
 
@@ -18,6 +25,7 @@ npm install
 npm run build
 npm run test
 npm run test:cov
+# etc.
 ```
 
 ## Develop (watch)
@@ -36,5 +44,3 @@ Package to `./lambda` with production dependencies only:
 ```bash
 make lambda
 ```
-
-TODO: Need to remove .ts files

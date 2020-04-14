@@ -1,6 +1,7 @@
-/dist/
-/node_modules/
-.markdownlint.json
-.nyc_output
-.serverless
+dist/
+node_modules/
+lambda/
+.nyc_output/
+.serverless/
+.aws-sam/
 package-lock.json
