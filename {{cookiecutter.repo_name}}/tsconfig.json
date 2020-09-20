@@ -11,10 +11,9 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"],
-
     // Base directory to resolve non-absolute module names
     "baseUrl": "src",
-    // "incremental": true
+    "incremental": true,
     // Generates corresponding '.d.ts' file
     "declaration": true,
     // Implies allowSyntheticDefaultImports: true
@@ -38,5 +37,5 @@
     "strict": true,
     "target": "es2018"
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src", "test"]
 }

@@ -28,7 +28,9 @@ npm run test:cov
 # etc.
 ```
 
-## Develop (watch)
+## Develop
+
+### Server
 
 Run in watch mode under nodemon (ts-node):
 
