@@ -50,7 +50,7 @@ lambda: build
 	npm run lambda
 
 dist: $(source_files) node_modules tsconfig.json
-	npm run compile:dist
+	npm run compile
 
 $(PACKAGE): $(build_files)
 	@mkdir -p "$(dir $@)"
