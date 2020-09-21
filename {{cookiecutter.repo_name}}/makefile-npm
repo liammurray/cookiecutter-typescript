@@ -34,9 +34,13 @@ utest: node_modules dist
 lint: node_modules
 	npm run lint
 
-# For servers (express server, etc.)
-develop: node_modules
+# Make sure code is compiled, start server, watch for code changes
+develop: dist
 	npm run start:watch | pino-pretty
+
+# Make sure code is compiled and watch for code changes
+watch: dist
+	npm run compile:watch
 
 node_modules: package.json
 	npm i && touch node_modules
