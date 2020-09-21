@@ -28,7 +28,7 @@ clean:
 	npm run build:clean
 	rm -f $(PACKAGE)
 
-utest: node_modules
+utest: node_modules dist
 	npm run test
 
 lint: node_modules
@@ -46,7 +46,7 @@ lambda: build
 	npm run lambda
 
 dist: $(source_files) node_modules tsconfig.json
-	npm run build
+	npm run compile:dist
 
 $(PACKAGE): $(build_files)
 	@mkdir -p "$(dir $@)"
