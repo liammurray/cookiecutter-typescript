@@ -7,7 +7,7 @@
   "scripts": {
     "audit-checker": "check-audit",
     "audit-resolver": "resolve-audit",
-    "build": "npm run compile:clean && npm run compile:dist",
+    "build": "npm run compile:clean && npm run compile",
     "compile:clean": "rimraf dist",
     "compile": "ttsc",
     "compile:watch": "ttsc -w",
@@ -23,6 +23,7 @@
     "lint:eslint": "eslint --cache --ext .ts ./",
     "start": "node dist/src/server.js",
     "start:debug": "node --inspect=localhost:9229 dist/src/server.js",
+    "start:debug:watch": "ttsc -w & nodemon -q -w dist/src --inspect=localhost:9229 dist/src/server.js",
     "start:watch": "ttsc -w & nodemon -q -w dist/src dist/src/server.js",
     "start:watch:tsnode": "nodemon --config nodemon-tsnode.json ./src/index.ts"
   },
