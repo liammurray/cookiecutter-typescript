@@ -13,7 +13,7 @@ build_files := $(source_files:src/%.ts=dist/%.js)
 PACKAGE := .package/$(shell node -p 'const p=require("./package.json"); `$${p.name}-$${p.version}.tgz`')
 
 # For lerna: NPM_INSTALL=lerna bootstrap --scope <scope>
-NPM_INSTALLgi?=npm install
+NPM_INSTALL?=npm install
 
 .PHONY: \
 	build \
